@@ -71,8 +71,6 @@ spec:
         ports:
           - name: pms
             containerPort: 32400
-          - name: http
-            containerPort: 32400
           - name: https
             containerPort: 32443
         env:
