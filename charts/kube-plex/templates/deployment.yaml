@@ -60,13 +60,19 @@ spec:
             path: /identity
             port: 32400
           initialDelaySeconds: 15
-          timeoutSeconds: 5
+          timeoutSeconds: 60
+          periodSeconds: 90
+          failureThreshold: 5
+          successThreshold: 1
         livenessProbe:
           httpGet:
             path: /identity
             port: 32400
-          initialDelaySeconds: 10
-          timeoutSeconds: 10
+          initialDelaySeconds: 60
+          timeoutSeconds: 60
+          periodSeconds: 90
+          failureThreshold: 6
+          successThreshold: 1
         ports:
           - name: pms
             containerPort: 32400
