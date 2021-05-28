@@ -148,12 +148,7 @@ spec:
     {{- end }}
       volumes:
       - name: data
-        persistentVolumeClaim:
-{{- if .Values.persistence.data.claimName }}
-          claimName: "{{ .Values.persistence.data.claimName }}"
-{{- else }}
-          claimName: "{{ template "fullname" . }}-data"
-{{- end }}
+        emptyDir: {}
       - name: config
         persistentVolumeClaim:
 {{- if .Values.persistence.config.claimName }}
